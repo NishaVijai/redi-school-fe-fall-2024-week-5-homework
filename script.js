@@ -47,9 +47,7 @@ createSecondInnerDivElement.appendChild(createResetButton);
 
 let displayValue = 0;
 const RESET_VALUE = 0;
-const TOP_LIMIT_VALUE = 5;
-// const TOP_LIMIT_VALUE = 20;
-// let displayValue = RESET_VALUE;
+const TOP_LIMIT_VALUE = 20;
 
 createPElementToDisplayResult.textContent = `${displayValue}`;
 createPlusButton.textContent = "+";
@@ -63,13 +61,6 @@ const resetDisplayCountValue = () => {
   displayValue = RESET_VALUE;
   return displayValue;
 };
-
-// Example: Regular Function
-// function addCountValue(num) {
-//   displayValue += num;
-// // num++;
-//   updateDisplayCountValue();
-// };
 
 const addCountValue = (num) => {
   if (displayValue >= TOP_LIMIT_VALUE) {
@@ -95,15 +86,5 @@ const subtractCountValue = (num) => {
 };
 
 createPlusButton.addEventListener("click", () => { addCountValue(1); }, false);
-
-// Example: Different argument (adding by 3)
-// createPlusButton.addEventListener("click", () => { addCountValue(3); }, false);
-
-// Example: addEventListener
-// createPlusButton.addEventListener("click", () => {
-//   displayValue++;
-//   updateDisplayCountValue();
-// });
-
 createMinusButton.addEventListener("click", () => { subtractCountValue(1); }, false);
 createResetButton.addEventListener("click", () => { resetDisplayCountValue(); }, false);
